@@ -19,21 +19,18 @@ if __name__ == '__main__':
 
     w = np.random.randn(num_features)
     for _ in range(num_iterations):
-        num_misclassified = 0
-
         gradient_vector = np.zeros(num_features)
 
-        for ind, target in enumerate(y):
+        for data_point, target in zip(X, y):
             prediction = np.sign(
                 np.dot(
                     w.T,
-                    X[ind]
+                    data_point
                 )
             )
 
             if target != prediction:
-                num_misclassified += 1
-                gradient_vector += target * X[ind]
+                gradient_vector += target * data_point
 
         w = w + learning_rate * gradient_vector
 
