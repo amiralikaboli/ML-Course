@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 num_iterations = 10000
-learning_rate = 0.0001
+learning_rate = 0.01
 
 if __name__ == '__main__':
     data_file_path = 'datasets/creditcard.csv'
@@ -32,6 +32,6 @@ if __name__ == '__main__':
             if target != prediction:
                 gradient_vector += target * data_point
 
-        w = w + learning_rate * gradient_vector
+        w = w + learning_rate / num_data_points * gradient_vector
 
     print(w)

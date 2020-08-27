@@ -1,9 +1,6 @@
 import numpy as np
 import pandas as pd
 
-num_iterations = 10000
-learning_rate = 0.000001
-
 if __name__ == '__main__':
     data_file_path = 'datasets/creditcard.csv'
     data = pd.read_csv(data_file_path)
